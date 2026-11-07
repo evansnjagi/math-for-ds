@@ -37,3 +37,27 @@ def add(u: list[float], v: list[float]) -> list[float]:
 
     # Return 
     return result
+
+# Vector-scalar multiplication
+def scale(c: float, v: list[float]) -> list[float]:
+    """
+    Return a vector, v multiplied by a scalar, c i.e. cv.
+
+    Parameters
+    ----------
+    c: float
+        A real number
+    v: list[float]
+        A vector
+    
+    Returns
+    -------
+    list[float]
+        A scaled vector with a factor of c.
+    """
+    result = []
+    for i in range(len(v)):
+        v_i = c * v[i]
+        result.append(v_i)
+    return result
+
