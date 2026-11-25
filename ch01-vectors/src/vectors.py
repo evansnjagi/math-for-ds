@@ -61,3 +61,40 @@ def scale(c: float, v: list[float]) -> list[float]:
         result.append(v_i)
     return result
 
+"""
+Vectors: Chapter 2
+    Dot product
+"""
+def dot(a: float, b: float) -> int:
+    """
+    The dot product of two vectors a x b.
+
+    Parameters
+    ----------
+    a: int
+        The vector, a
+    b: int
+        The vector, b
+
+    Returns
+    -------
+    float
+        The computed dot product.
+
+    Raises
+    ------ 
+    ValueError: When len(a) != len(b)
+    """
+    if len(a) != len(b):
+        raise ValueError(f"a and b have unequal lengths. i.e. a has {len(a)} and b has {len(b)}")
+
+    result = []
+
+    for i in range(len(a)):
+        result.append(a[i] * b[i])
+
+    sum = result[0]
+    for i in range(len(a) - 1):
+        sum += result[i + 1]
+    return sum
+
