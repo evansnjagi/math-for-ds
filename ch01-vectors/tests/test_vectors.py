@@ -5,7 +5,7 @@ Chapter 1: Vector addition and scalar multiplication
 # Import 
 import pytest
 
-from vectors import add, scale
+from vectors import add, scale, dot
 
 # 1. Vector addition test
 def test_add_basic():
@@ -50,3 +50,32 @@ def test_scale_does_not_modify_input():
     # Assert
     assert v == original
     assert result == [2, 4, 6]
+
+"""
+Vectors: Chapter 2
+    The dot product
+"""
+def test_dot_return():
+    expected = 12
+
+    a = [1, 2, 3]
+    b = [4, -5, 6]
+
+    result = dot(a, b)
+    assert result == expected 
+
+def test_dot_raises_error():
+    a = (1, 2, 3)
+    b = (4, 5)
+
+    with pytest.raises(ValueError, match = "unequal lengths"):
+        dot(a, b)
+
+def test_dot_does_not_modify_input():
+    a = [1, 2, 3]
+    b = [4, 5, 6]
+
+    result = dot(a, b)
+
+    assert result == 32
+    assert a == a and b == b
