@@ -65,15 +65,15 @@ def scale(c: float, v: list[float]) -> list[float]:
 Vectors: Chapter 2
     Dot product
 """
-def dot(a: float, b: float) -> int:
+def dot(a: list[float], b: list[float]) -> float:
     """
-    The dot product of two vectors a x b.
+    The dot product of two vectors, a and b.
 
     Parameters
     ----------
-    a: int
+    a: list[float]
         The vector, a
-    b: int
+    b: list[float]
         The vector, b
 
     Returns
@@ -92,9 +92,8 @@ def dot(a: float, b: float) -> int:
 
     for i in range(len(a)):
         result.append(a[i] * b[i])
-
-    sum = result[0]
-    for i in range(len(a) - 1):
-        sum += result[i + 1]
-    return sum
+        
+    for i in range(len(a)):
+        product += result[i]
+    return product
 
